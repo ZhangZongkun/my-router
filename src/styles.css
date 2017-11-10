@@ -16,6 +16,11 @@ body {
   margin: 2em;
 }
 
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+
 a {
   cursor: pointer;
   cursor: hand;
@@ -40,7 +45,7 @@ nav a:hover {
   background-color: #CFD8DC;
 }
 
-nav a:active {
+nav a.active {
   color: #039be5;
 }
 
