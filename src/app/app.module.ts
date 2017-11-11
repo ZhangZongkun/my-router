@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { HeroesModule } from './heroes/heroes.module';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,7 @@ import { PageNotFoundComponent } from './not-found.component';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
-  imports: [BrowserModule, FormsModule, HttpModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpModule, HeroesModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
