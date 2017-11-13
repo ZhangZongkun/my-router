@@ -1,9 +1,9 @@
 <h2>Welcome</h2>
 
 <form *ngIf="contacts" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-  <h3>{{contact.name}}</h3>
+  <h3 highlight>{{contact.name | awesome}}</h3>
   <div class="form-group">
-    <label for="name">Name</label>
+    <label>Name</label>
     <input type="text" class="form-control" required [(ngModel)]="contact.name"
            name="name" #name="ngModel">
     <div [hidden]="name.valid" class="alert alert-danger">
