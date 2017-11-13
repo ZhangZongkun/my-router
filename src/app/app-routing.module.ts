@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './not-found.component';
 
 const appRoutes: Routes = [
+  {path: 'contact', loadChildren: 'app/contact/contact.module#ContactModule'},
   {path: '**', component: PageNotFoundComponent}
 ];
 

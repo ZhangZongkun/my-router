@@ -13,12 +13,15 @@ export class ContactComponent implements OnInit {
   constructor(private contactService: ContactService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.contactService.getContacts()
       .then(contacts => {
         this.contacts = contacts;
         this.contact = contacts[0];
       });
+  }
+
+  onSubmit() {
   }
 
 }
