@@ -16,12 +16,10 @@ const FETCH_LATENCY = 500;
 
 @Injectable()
 export class ContactService {
+
   getContacts() {
-    return new Promise<Contact[]>(resolve => {
-      setTimeout(() => {
-        resolve(CONTACTS);
-      }, FETCH_LATENCY);
-    });
+    return new Promise<Contact[]>(resolve =>
+      setTimeout(() => resolve(CONTACTS), FETCH_LATENCY));
   }
 
   getContact(id: number | string) {
