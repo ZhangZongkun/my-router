@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Contact, ContactService } from './contact.service';
+import { UserService } from '../core/user.service';
 
 @Component({
   templateUrl: './contact.component.html',
@@ -10,8 +11,11 @@ export class ContactComponent implements OnInit {
   contact: Contact;
   contacts: Contact[];
   msg = 'Loading contacts ...';
+  userName = '';
 
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService,
+              private userService: UserService) {
+    this.userName = userService.userName;
   }
 
   ngOnInit() {
