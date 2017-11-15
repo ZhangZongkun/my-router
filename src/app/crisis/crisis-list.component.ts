@@ -5,9 +5,13 @@ import { Crisis, CrisisService } from './crisis.service';
 @Component({
   template: `
     <h3>Crisis List</h3>
-    <div *ngFor="let crisis of crises | async">
-      <a routerLink="{{'../' + crisis.id}}">{{crisis.id}} - {{crisis.name}}</a>
-    </div>
+    <ul class="items">
+      <li *ngFor="let crisis of crises | async">
+        <a routerLink="{{'../' + crisis.id}}">
+          <span class="badge">{{crisis.id}}</span>{{crisis.name}}
+        </a>
+      </li>
+    </ul>
   `
 })
 export class CrisisListComponent implements OnInit {
