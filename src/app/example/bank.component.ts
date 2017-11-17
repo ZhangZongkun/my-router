@@ -3,8 +3,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-bank-account',
   template: `
-    Bank Name: {{bankName}}
-    Account Id: {{id}}
+    <p>Bank Name: {{bankName}}</p>
+    <p>Account Id: {{id}}</p>
   `
 })
 export class BankComponent {
