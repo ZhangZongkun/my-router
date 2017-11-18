@@ -13,8 +13,20 @@
 <p appHighlight defaultColor="orange">Highlight me in orange.</p>
 
 <h1>Structural Directives</h1>
-<app-happy-hero [hero]="hero"></app-happy-hero>
 
-<h2></h2>
+<h2>ngSwitch</h2>
+<div>Pick your favorate hero</div>
+<p>
+  <label *ngFor="let h of heroes">
+    <input type="radio" name="heroes" [(ngModel)]="hero" [value]="h">{{h.name}}
+  </label>
+  <label><input type="radio" name="heroes" (click)="hero = null">None</label>
+</p>
+
 <h4>NgSwitch</h4>
-<div ></div>
+<div [ngSwitch]="hero?.emotion">
+  <app-happy-hero *ngSwitchCase="'happy'" [hero]="hero"></app-happy-hero>
+  <app-sad-hero *ngSwitchCase="'sad'" [hero]="hero"></app-sad-hero>
+  <app-confused-hero *ngSwitchCase="'confused'" [hero]="hero"></app-confused-hero>
+  <app-unknown-hero *ngSwitchDefault [hero]="hero"></app-unknown-hero>
+</div>

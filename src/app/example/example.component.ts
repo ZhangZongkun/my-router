@@ -8,7 +8,7 @@ import { heroes } from './hero';
 export class ExampleComponent {
   color: string;
   heroes = heroes;
-  hero = this.heroes[0];
+  hero = this.heroes[2];
 
   everyFiveSeconds() {
     console.log('Every five seconds.');
