@@ -30,3 +30,16 @@
   <app-confused-hero *ngSwitchCase="'confused'" [hero]="hero"></app-confused-hero>
   <app-unknown-hero *ngSwitchDefault [hero]="hero"></app-unknown-hero>
 </div>
+
+<p><i>&lt;select&gt; with &lt;ng-container&gt;</i></p>
+<div>
+  Pick your favorite hero
+  (<label><input type="checkbox" checked (click)="showSad = !showSad">show sad</label>)
+</div>
+<select [(ngModel)]="hero">
+  <ng-container *ngFor="let h of heroes">
+    <ng-container *ngIf="showSad || h.emotion !== 'sad'">
+      <option [ngValue]="h">{{h.name}} ({{h.emotion}})</option>
+    </ng-container>
+  </ng-container>
+</select>
