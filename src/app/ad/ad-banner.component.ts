@@ -19,7 +19,7 @@ export class AdBannerComponent implements AfterViewInit, OnDestroy {
   subscription: any;
   interval: any;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
   ngAfterViewInit(): void {
@@ -43,8 +43,6 @@ export class AdBannerComponent implements AfterViewInit, OnDestroy {
   }
 
   getAds() {
-    this.interval = setInterval(() => {
-      this.loadComponent();
-    }, 3000);
+    this.interval = setInterval(() => this.loadComponent(), 3000);
   }
 }
