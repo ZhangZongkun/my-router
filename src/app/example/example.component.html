@@ -34,7 +34,7 @@
 <p><i>&lt;select&gt; with &lt;ng-container&gt;</i></p>
 <div>
   Pick your favorite hero
-  (<label><input type="checkbox" checked (click)="showSad = !showSad">show sad</label>)
+  (<label><input type="checkbox" [checked]="showSad" (change)="showSad = !showSad">show sad</label>)
 </div>
 <select [(ngModel)]="hero">
   <ng-container *ngFor="let h of heroes">
