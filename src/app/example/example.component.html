@@ -62,3 +62,9 @@
   (B) Although the condition is true,
   this paragraph is displayed because myUnless is set to false.
 </p>
+
+<h2>Two-way Binding</h2>
+<div>
+  <app-sizer [(size)]="fontSizePx"></app-sizer>
+  <label>FontSize (px): <input [(ngModel)]="fontSizePx"></label>
+</div>

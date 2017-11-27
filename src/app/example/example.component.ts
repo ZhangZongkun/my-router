@@ -12,6 +12,7 @@ export class ExampleComponent {
   hero = this.heroes[2];
   showSad = true;
   condition = false;
+  fontSizePx = 16;
 
   everyFiveSeconds() {
     console.log('Every five seconds.');
