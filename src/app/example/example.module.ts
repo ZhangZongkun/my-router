@@ -6,14 +6,14 @@ import { ExampleComponent } from './example.component';
 import { BankComponent } from './bank.component';
 import { heroSwitchComponents } from './hero-switch.components';
 import { SizerComponent } from './sizer.component';
-
+import { VoterComponent } from './voter.component';
 import { IntervalDirective } from './interval.directive';
 import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   imports: [SharedModule, ExampleRoutingModule],
   declarations: [ExampleComponent, BankComponent, heroSwitchComponents, SizerComponent,
-    IntervalDirective, UnlessDirective]
+    VoterComponent, IntervalDirective, UnlessDirective]
 })
 export class ExampleModule {
 }

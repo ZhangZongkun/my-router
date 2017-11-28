@@ -68,3 +68,9 @@
   <app-sizer [(size)]="fontSizePx"></app-sizer>
   <label>FontSize (px): <input [(ngModel)]="fontSizePx"></label>
 </div>
+
+<h2>Should mankind colonize the Universe?</h2>
+<h3>Agree: {{agreed}}, Disagree: {{disagreed}}</h3>
+<app-voter *ngFor="let hero of heroes" [name]="hero.name"
+           (onVoted)="onVoted($event)">
+</app-voter>

@@ -12,7 +12,15 @@ export class ExampleComponent {
   hero = this.heroes[2];
   showSad = true;
   condition = false;
+
   fontSizePx = 16;
+
+  agreed = 0;
+  disagreed = 0;
+
+  onVoted(agreed: boolean) {
+    agreed ? this.agreed++ : this.disagreed++;
+  }
 
   everyFiveSeconds() {
     console.log('Every five seconds.');
