@@ -21,3 +21,12 @@
 ad-banner {
   width: 400px;
 }
+
+.seconds {
+  background-color: darkgrey;
+  color: red;
+  font-size: 3em;
+  margin: 0.3em 0;
+  text-align: center;
+  width: 1.5em;
+}

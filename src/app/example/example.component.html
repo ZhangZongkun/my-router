@@ -74,3 +74,9 @@
 <app-voter *ngFor="let hero of heroes" [name]="hero.name"
            (onVoted)="onVoted($event)">
 </app-voter>
+
+<h3>Countdown to Liftoff (via local variable)</h3>
+<button (click)="timer.start()">Start</button>
+<button (click)="timer.stop()">Stop</button>
+<div class="seconds">{{timer.seconds}}</div>
+<app-countdown-timer #timer></app-countdown-timer>

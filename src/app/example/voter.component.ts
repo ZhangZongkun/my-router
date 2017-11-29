@@ -9,10 +9,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   `
 })
 export class VoterComponent {
-  @Input()
-  name: string;
-  @Output()
-  onVoted = new EventEmitter<boolean>();
+  @Input() name: string;
+  @Output() onVoted = new EventEmitter<boolean>();
   voted = false;
 
   vote(agreed: boolean) {
