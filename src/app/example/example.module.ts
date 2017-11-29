@@ -8,13 +8,14 @@ import { heroSwitchComponents } from './hero-switch.components';
 import { SizerComponent } from './sizer.component';
 import { VoterComponent } from './voter.component';
 import { CountdownTimerComponent } from './countdown-timer.component';
+import { VersionChildComponent } from './version-child.component';
 import { IntervalDirective } from './interval.directive';
 import { UnlessDirective } from './unless.directive';
 
 @NgModule({
   imports: [SharedModule, ExampleRoutingModule],
   declarations: [ExampleComponent, BankComponent, heroSwitchComponents, SizerComponent,
-    VoterComponent, CountdownTimerComponent, IntervalDirective, UnlessDirective]
+    VoterComponent, CountdownTimerComponent, VersionChildComponent, IntervalDirective, UnlessDirective]
 })
 export class ExampleModule {
 }

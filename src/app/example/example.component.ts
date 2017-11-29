@@ -18,8 +18,20 @@ export class ExampleComponent {
   agreed = 0;
   disagreed = 0;
 
+  major = 1;
+  minor = 23;
+
   onVoted(agreed: boolean) {
     agreed ? this.agreed++ : this.disagreed++;
+  }
+
+  newMinor() {
+    this.minor++;
+  }
+
+  newMajor() {
+    this.major++;
+    this.minor = 0;
   }
 
   everyFiveSeconds() {
