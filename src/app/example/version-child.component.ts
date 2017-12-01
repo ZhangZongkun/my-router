@@ -13,6 +13,6 @@ export class VersionChildComponent implements OnChanges {
   changeLog: string[] = [];
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(changes);
+    // console.log(changes);
   }
 }

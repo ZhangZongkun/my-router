@@ -85,3 +85,9 @@
 <button (click)="newMinor()">New minor version</button>
 <button (click)="newMajor()">New major version</button>
 <app-version-child [major]="major" [minor]="minor"></app-version-child>
+
+<h3>Pipe</h3>
+<p>The hero's birthday is {{birthday | date:format | uppercase}}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+<hr>
+<p>Hero's strenth is {{strenth | exponent:8}}</p>

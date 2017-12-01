@@ -21,6 +21,19 @@ export class ExampleComponent {
   major = 1;
   minor = 23;
 
+  birthday = new Date(1988, 3, 15);
+  toggle = true;
+
+  strenth = 2;
+
+  get format() {
+    return this.toggle ? 'shortDate' : 'fullDate';
+  }
+
+  toggleFormat() {
+    this.toggle = !this.toggle;
+  }
+
   onVoted(agreed: boolean) {
     agreed ? this.agreed++ : this.disagreed++;
   }

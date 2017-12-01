@@ -11,11 +11,13 @@ import { CountdownTimerComponent } from './countdown-timer.component';
 import { VersionChildComponent } from './version-child.component';
 import { IntervalDirective } from './interval.directive';
 import { UnlessDirective } from './unless.directive';
+import { ExponentPipe } from './exponent.pipe';
 
 @NgModule({
   imports: [SharedModule, ExampleRoutingModule],
   declarations: [ExampleComponent, BankComponent, heroSwitchComponents, SizerComponent,
-    VoterComponent, CountdownTimerComponent, VersionChildComponent, IntervalDirective, UnlessDirective]
+    VoterComponent, CountdownTimerComponent, VersionChildComponent, IntervalDirective,
+    UnlessDirective, ExponentPipe]
 })
 export class ExampleModule {
 }
