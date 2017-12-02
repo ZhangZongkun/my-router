@@ -25,6 +25,9 @@ export class ExampleComponent {
   toggle = true;
 
   strenth = 2;
+  factor = 3;
+
+  names = ['Mr.IQ', '    ', '    Bombasto     '];
 
   get format() {
     return this.toggle ? 'shortDate' : 'fullDate';

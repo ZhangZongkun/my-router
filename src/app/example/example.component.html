@@ -89,5 +89,11 @@
 <h3>Pipe</h3>
 <p>The hero's birthday is {{birthday | date:format | uppercase}}</p>
 <button (click)="toggleFormat()">Toggle Format</button>
-<hr>
-<p>Hero's strenth is {{strenth | exponent:8}}</p>
+
+<h2>Power Boost Calculator</h2>
+<div>Normal power: <input [(ngModel)]="strenth"></div>
+<div>Boost factor: <input [(ngModel)]="factor"></div>
+<p>Hero's strenth is {{strenth | exponent:factor}}</p>
+
+<h2>Master controls {{names.length}} names</h2>
+<app-name-child *ngFor="let n of names" [name]="n"></app-name-child>
