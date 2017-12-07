@@ -7,6 +7,7 @@ const appRoutes: Routes = [
   {path: 'crisis', loadChildren: 'app/crisis/crisis.module#CrisisModule'},
   {path: 'contact', loadChildren: 'app/contact/contact.module#ContactModule'},
   {path: 'example', loadChildren: 'app/example/example.module#ExampleModule'},
+  {path: 'form', loadChildren: 'app/myform/myform.module#MyformModule'},
   {path: 'ad', loadChildren: 'app/ad/ad.module#AdModule'},
   {path: '**', component: PageNotFoundComponent}
 ];
