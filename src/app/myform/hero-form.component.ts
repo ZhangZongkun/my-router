@@ -14,6 +14,7 @@ export class HeroFormComponent {
 
   onSubmit() {
     this.submitted = true;
+    alert('You\'re my hero.');
   }
 
   get diagnostic() {
