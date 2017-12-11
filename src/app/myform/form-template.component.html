@@ -1,12 +1,13 @@
 <div class="container">
   <h1>Template-Driven Form</h1>
+  {{hero | json}}
   <form #heroForm="ngForm">
     <div [hidden]="heroForm.submitted">
 
       <div class="form-group">
         <label for="name">Name</label>
         <input id="name" name="name" #name="ngModel" required class="form-control"
-               minlength="4" forbiddenName="jack" [(ngModel)]="hero.name">
+               minlength="4" [(ngModel)]="hero.name">
         <div *ngIf="name.invalid && (name.dirty || name.touched)"
              class="alert alert-danger">
           <div *ngIf="name.errors.required">
@@ -14,9 +15,6 @@
           </div>
           <div *ngIf="name.errors.minlength">
             Name must be at least 4 charactors long.
-          </div>
-          <div *ngIf="name.errors.forbiddenName">
-            Name cannot be Bob.
           </div>
         </div>
       </div>
