@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import 'rxjs/add/operator/delay';
 
 @Pipe({
   name: 'fetch',
@@ -16,8 +17,7 @@ export class FetchJsonPipe implements PipeTransform {
     if (url !== this.cachedUrl) {
       this.cachedData = null;
       this.cachedUrl = url;
-      this.http.get(url)
-        .map(result => result as JSON)
+      this.http.get(url).delay(1000)
         .subscribe(result => this.cachedData = result);
     }
 
