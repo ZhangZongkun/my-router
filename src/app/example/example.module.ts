@@ -14,12 +14,13 @@ import { AsyncMessageComponent } from './async-message.component';
 import { IntervalDirective } from './interval.directive';
 import { UnlessDirective } from './unless.directive';
 import { ExponentPipe } from './exponent.pipe';
+import { FetchJsonPipe } from './fetch-json.pipe';
 
 @NgModule({
   imports: [SharedModule, ExampleRoutingModule],
   declarations: [ExampleComponent, BankComponent, heroSwitchComponents, SizerComponent,
     VoterComponent, CountdownTimerComponent, VersionChildComponent, NameChildComponent,
-    AsyncMessageComponent, IntervalDirective, UnlessDirective, ExponentPipe]
+    AsyncMessageComponent, IntervalDirective, UnlessDirective, ExponentPipe, FetchJsonPipe]
 })
 export class ExampleModule {
 }

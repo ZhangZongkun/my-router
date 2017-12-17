@@ -99,3 +99,10 @@
 <app-name-child *ngFor="let n of names" [name]="n"></app-name-child>
 
 <app-async-message></app-async-message>
+
+<h2>Heroes from JSON File</h2>
+<div *ngFor="let h of ('assets/api/heroes.json' | fetch)">
+  {{h.name}}
+</div>
+
+<p>Heroes as JSON: {{'assets/api/heroes.json' | fetch | json}}</p>

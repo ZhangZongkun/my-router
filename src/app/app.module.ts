@@ -1,18 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HeroesModule } from './heroes/heroes.module';
 import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './not-found.component';
-import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
-  imports: [BrowserModule, FormsModule, HttpModule, CoreModule, HeroesModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, CoreModule, HeroesModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
