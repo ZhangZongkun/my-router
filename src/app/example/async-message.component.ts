@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/interval';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/take';
+import { Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-async-message',
@@ -26,8 +24,8 @@ export class AsyncMessageComponent {
   }
 
   resend() {
-    this.message$ = Observable.interval(500)
-      .map(i => this.messages[i])
-      .take(this.messages.length);
+    // this.message$ = Observable.interval(500)
+    //   .map(i => this.messages[i])
+    //   .take(this.messages.length);
   }
 }
