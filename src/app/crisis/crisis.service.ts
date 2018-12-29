@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { map } from 'rxjs/operators';
 
 export class Crisis {
-  constructor(public id: number,
-              public name: string) {
+  constructor(public id: number, public name: string) {
   }
 }
 
@@ -10,21 +11,18 @@ const CRISES: Crisis[] = [
   new Crisis(1, 'Dragon Burning Cities'),
   new Crisis(2, 'Sky Rains Great White Sharks'),
   new Crisis(3, 'Giant Asteroid Heading For Earth'),
-  new Crisis(4, 'Procrastinators Meeting Delayed Again')
-];
-
-const FETCH_LATENCY = 500;
+  new Crisis(37, 'Procrastinators Meeting Delayed Again')];
 
 @Injectable()
 export class CrisisService {
+  private crises$ = new BehaviorSubject(CRISES);
 
   getCrises() {
-    return new Promise<Crisis[]>(resolve =>
-      setTimeout(() => resolve(CRISES), FETCH_LATENCY));
+    return this.crises$;
   }
 
   getCrisis(id: number | string) {
-    return this.getCrises()
-      .then(heroes => heroes.find(hero => hero.id === +id));
+    return this.getCrises().pipe(
+      map(crises => crises.find(crisis => crisis.id === +id)));
   }
 }
