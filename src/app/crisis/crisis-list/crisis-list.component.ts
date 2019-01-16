@@ -12,6 +12,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class CrisisListComponent implements OnInit {
   crises$: Observable<Crisis[]>;
+  oneAtATime = true;
   selectedId: number;
 
   constructor(private crisisService: CrisisService,

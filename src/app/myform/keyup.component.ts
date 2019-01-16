@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     <h2>User Input</h2>
     <input #box (keyup)="0">
     <p>{{box.value}}</p>
-    <input [(ngModel)]="model" name="model">
+    <input [(ngModel)]="model">
     <p>{{model}}</p>
     <h3>Add hero</h3>
     <input #newHero

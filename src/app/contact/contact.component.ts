@@ -50,4 +50,12 @@ export class ContactComponent implements OnInit {
     setTimeout(() => this.msg = '', 1500);
   }
 
+  onOpen(event) {
+    console.log(event);
+  }
+
+  onClose(event) {
+    console.log(event);
+  }
+
 }

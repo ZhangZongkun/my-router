@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AwesomePipe } from './awesome.pipe';
 import { HighlightDirective } from './highlight.directive';
 
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { PopoverModule } from 'ngx-bootstrap/popover';
 
 @NgModule({
-  imports: [CommonModule, AlertModule.forRoot(), PopoverModule.forRoot()],
+  imports: [CommonModule, AccordionModule.forRoot(), AlertModule.forRoot(), PopoverModule.forRoot()],
   declarations: [AwesomePipe, HighlightDirective],
-  exports: [CommonModule, AlertModule, PopoverModule, FormsModule, AwesomePipe, HighlightDirective]
+  exports: [CommonModule, AccordionModule, AlertModule, PopoverModule, FormsModule, AwesomePipe, HighlightDirective]
 })
 export class SharedModule {
 }

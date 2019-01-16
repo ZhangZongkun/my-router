@@ -36,7 +36,8 @@
   Pick your favorite hero
   (<label><input type="checkbox" [checked]="showSad" (change)="showSad = !showSad">show sad</label>)
 </div>
-<select [(ngModel)]="hero">
+<label for="heroSelect" class="mr-3">请选择一个英雄</label>
+<select [(ngModel)]="hero" id="heroSelect">
   <ng-container *ngFor="let h of heroes">
     <ng-container *ngIf="showSad || h.emotion !== 'sad'">
       <option [ngValue]="h">{{h.name}} ({{h.emotion}})</option>
@@ -67,6 +68,12 @@
 <div>
   <app-sizer [(size)]="fontSizePx"></app-sizer>
   <label>FontSize (px): <input [(ngModel)]="fontSizePx"></label>
+</div>
+
+<div class="d-flex flex-column p-2 bg-secondary">
+  <div *ngFor="let h of heroes" class="p-2 bg-light">
+    <app-hero-detail [hero]="h" (deleteRequest)="deleteHero($event)">Hero Detail</app-hero-detail>
+  </div>
 </div>
 
 <h2>Should mankind colonize the Universe?</h2>

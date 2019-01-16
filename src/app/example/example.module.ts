@@ -15,12 +15,13 @@ import { IntervalDirective } from './interval.directive';
 import { UnlessDirective } from './unless.directive';
 import { ExponentPipe } from './exponent.pipe';
 import { FetchJsonPipe } from './fetch-json.pipe';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   imports: [SharedModule, ExampleRoutingModule],
   declarations: [ExampleComponent, BankComponent, heroSwitchComponents, SizerComponent,
     VoterComponent, CountdownTimerComponent, VersionChildComponent, NameChildComponent,
-    AsyncMessageComponent, IntervalDirective, UnlessDirective, ExponentPipe, FetchJsonPipe]
+    AsyncMessageComponent, IntervalDirective, UnlessDirective, ExponentPipe, FetchJsonPipe, HeroDetailComponent]
 })
 export class ExampleModule {
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { heroes } from './hero';
+import { Hero, heroes } from './hero';
 
 @Component({
   templateUrl: './example.component.html',
@@ -35,6 +35,10 @@ export class ExampleComponent {
 
   toggleFormat() {
     this.toggle = !this.toggle;
+  }
+
+  deleteHero(hero: Hero) {
+    console.log(`Hero deleted: ${hero.name}`);
   }
 
   onVoted(agreed: boolean) {
