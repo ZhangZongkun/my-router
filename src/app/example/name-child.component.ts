@@ -2,7 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-name-child',
-  template: '<h3>"{{name}}"</h3>'
+  template: `<h3>"{{name}}"</h3>
+  <button type="button" class="btn btn-info" (click)="changeName()">Change Name</button>`
 })
 export class NameChildComponent {
   private _name = '';
@@ -14,5 +15,9 @@ export class NameChildComponent {
 
   get name(): string {
     return this._name;
+  }
+
+  changeName() {
+    this._name = 'A hero';
   }
 }
