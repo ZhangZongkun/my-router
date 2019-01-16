@@ -18,3 +18,13 @@
 </form>
 
 <app-zippy (open)="onOpen($event)" (close)="onClose($event)"></app-zippy>
+
+<div>Num: {{num$ | async}}</div>
+
+<div><code>observable|async</code>:
+  Time: {{time$ | async}}
+</div>
+
+<div>
+  <input id="search-box" class="form-control" placeholder="Search">
+</div>
