@@ -9,6 +9,7 @@ const appRoutes: Routes = [
   {path: 'example', loadChildren: 'app/example/example.module#ExampleModule'},
   {path: 'form', loadChildren: 'app/myform/myform.module#MyformModule'},
   {path: 'ad', loadChildren: 'app/ad/ad.module#AdModule'},
+  {path: 'http', loadChildren: 'app/http/http.module#HttpModule'},
   {path: '**', component: PageNotFoundComponent}
 ];
 

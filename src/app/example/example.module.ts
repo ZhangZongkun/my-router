@@ -23,7 +23,8 @@ import { AstronautComponent } from './mission/astronaut.component';
   imports: [SharedModule, ExampleRoutingModule],
   declarations: [ExampleComponent, BankComponent, heroSwitchComponents, SizerComponent,
     VoterComponent, CountdownTimerComponent, VersionChildComponent, NameChildComponent,
-    AsyncMessageComponent, IntervalDirective, UnlessDirective, ExponentPipe, FetchJsonPipe, HeroDetailComponent, MissionComponent, AstronautComponent]
+    AsyncMessageComponent, IntervalDirective, UnlessDirective, ExponentPipe, FetchJsonPipe,
+    HeroDetailComponent, MissionComponent, AstronautComponent]
 })
 export class ExampleModule {
 }
