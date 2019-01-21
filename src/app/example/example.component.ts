@@ -27,6 +27,8 @@ export class ExampleComponent {
   strenth = 2;
   factor = 3;
 
+  isSpecial = true;
+
   names = ['Mr.IQ', '    ', '    Bombasto     '];
 
   get format() {

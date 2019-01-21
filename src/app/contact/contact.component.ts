@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Contact, ContactService } from './contact.service';
 import { UserService } from '../core/user.service';
 import { ajax, fromPromise } from 'rxjs/internal-compatibility';
-import { catchError, debounce, debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
+import { catchError, debounceTime, distinctUntilChanged, filter, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs/internal/observable/of';
 import { interval } from 'rxjs/internal/observable/interval';
 import { Observable } from 'rxjs/internal/Observable';
@@ -63,8 +63,6 @@ export class ContactComponent implements OnInit {
         console.log('Error already caught... will not run');
       });
 
-    const searchBox = document.getElementById('search-box');
-
     const typeahead = fromEvent($('#search-box'), 'input').pipe(
       map((e: KeyboardEvent) => (e.target as HTMLInputElement).value),
       filter(text => text.length > 2),
@@ -73,7 +71,7 @@ export class ContactComponent implements OnInit {
       switchMap(() => ajax('assets/api/heroes.json'))
     );
 
-    typeahead.subscribe(data => console.log(data));
+    typeahead.subscribe(data => console.log(data.response));
   }
 
   onSubmit() {

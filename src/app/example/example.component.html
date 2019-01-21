@@ -115,3 +115,14 @@
 <p>Heroes as JSON: {{'assets/api/heroes.json' | fetch | json}}</p>
 
 <app-mission></app-mission>
+
+<button type="button" class="btn btn-warning"
+        (click)="isSpecial = !isSpecial">Toggle
+</button>
+<div [class.special]="isSpecial" [style.color]="isSpecial ? 'red' : 'green'">
+  The class binding is special
+</div>
+<div class="text-white" [class.special]="!isSpecial"
+     [style.background-color]="!isSpecial ? 'cyan' : 'gray'">
+  This one is not so special
+</div>

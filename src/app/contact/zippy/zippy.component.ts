@@ -4,7 +4,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   selector: 'app-zippy',
   template: `
     <div>
-      <button type="button" class="btn btn-info" (click)="toggle()">Toggle</button>
+      <button type="button" class="btn btn-info" (click)="toggle()">Toggle to show/hide</button>
       <div [hidden]="!visible">
         <ng-container><strong>Toggle visibility</strong></ng-container>
       </div>
