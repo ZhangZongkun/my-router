@@ -1,8 +1,8 @@
 <h3>Get configuration from JSON file</h3>
-<div>
-  <button (click)="clear(); showConfig_v2()">Get</button>
-  <button (click)="clear(); showConfigResponse()">GetResponse</button>
-  <button (click)="clear()">Clear</button>
+<div class="mb-2">
+  <button type="button" class="btn btn-info mr-2" (click)="clear(); showConfig_v2()">Get</button>
+  <button type="button" class="btn btn-info mr-2" (click)="clear(); showConfigResponse()">GetResponse</button>
+  <button type="button" class="btn btn-info" (click)="clear()">Clear</button>
 </div>
 <span *ngIf="config">
   <p>Heroes API URL is "{{config.heroesUrl}}"</p>

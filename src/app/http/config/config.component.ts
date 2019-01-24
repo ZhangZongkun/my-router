@@ -36,10 +36,11 @@ export class ConfigComponent {
   showConfigResponse() {
     this.configService.getConfigResponse()
       .subscribe(resp => {
+        console.log(resp.headers);
         const keys = resp.headers.keys();
         this.headers = keys.map(key =>
           `${key}: ${resp.headers.get(key)}`);
         this.config = resp.body;
-      })
+      });
   }
 }

@@ -35,3 +35,11 @@ button.b, span.b, .unless.b {
   font-weight: bold;
   font-size: x-large
 }
+
+.saveable {
+  color: limegreen;
+}
+
+.modified {
+  font-family: "Brush Script MT", serif
+}

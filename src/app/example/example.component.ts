@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Hero, heroes } from './hero';
 
@@ -6,7 +6,7 @@ import { Hero, heroes } from './hero';
   templateUrl: './example.component.html',
   styleUrls: ['./example.component.css']
 })
-export class ExampleComponent {
+export class ExampleComponent implements OnInit {
   color: string;
   heroes = heroes;
   hero = this.heroes[2];
@@ -27,9 +27,19 @@ export class ExampleComponent {
   strenth = 2;
   factor = 3;
 
+  canSave = true;
+  isUnchanged = true;
   isSpecial = true;
 
+  currentClasses: {};
+  currentStyles: {};
+
   names = ['Mr.IQ', '    ', '    Bombasto     '];
+
+  ngOnInit(): void {
+    this.setCurrentClasses();
+    this.setCurrentStyles();
+  }
 
   get format() {
     return this.toggle ? 'shortDate' : 'fullDate';
@@ -63,4 +73,21 @@ export class ExampleComponent {
   everySecond() {
     console.log('Every second.');
   }
+
+  setCurrentClasses() {
+    this.currentClasses = {
+      'saveable': this.canSave,
+      'modified': !this.isUnchanged,
+      'special': this.isSpecial
+    };
+  }
+
+  setCurrentStyles() {
+    this.currentStyles = {
+      'font-style': this.canSave ? 'italic' : 'normal',
+      'font-weight': !this.isUnchanged ? 'bold' : 'normal',
+      'font-size': this.isSpecial ? '24px' : '12px'
+    }
+  }
+
 }
