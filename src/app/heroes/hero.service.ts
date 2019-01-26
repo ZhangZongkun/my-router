@@ -1,31 +1,33 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Observable } from 'rxjs/internal/Observable';
 
 export class Hero {
-  constructor(public id: number,
-              public name: string) {
-  }
+  public id: number;
+  public name: string;
 }
 
-const HEROES = [
-  new Hero(11, 'Mr. Nice'),
-  new Hero(12, 'Narco'),
-  new Hero(13, 'Bombasto'),
-  new Hero(14, 'Celeritas'),
-  new Hero(15, 'Magneta'),
-  new Hero(16, 'Rubberman')
+const HEROES: Hero[] = [
+  {id: 11, name: 'Mr. Nice'},
+  {id: 12, name: 'Narco'},
+  {id: 13, name: 'Bombasto'},
+  {id: 14, name: 'Celeritas'},
+  {id: 15, name: 'Magneta'},
+  {id: 16, name: 'RubberMan'},
+  {id: 17, name: 'Dynama'},
+  {id: 18, name: 'Dr IQ'},
+  {id: 19, name: 'Magma'},
+  {id: 20, name: 'Tornado'}
 ];
 
 @Injectable()
 export class HeroService {
-  getHeroes() {
-    return of(HEROES);
-  }
+  getHeroes = (): Observable<Hero[]> => of(HEROES);
 
   getHero(id: number | string) {
-    return this.getHeroes()
-    // (+) before `id` turns the string into a number
-      .pipe(map(heroes => heroes.find(hero => hero.id === +id)));
+    return this.getHeroes().pipe(
+      map(heroes => heroes.find(hero => hero.id === +id))
+    );
   }
 }

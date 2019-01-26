@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroListComponent } from './hero-list.component';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 const heroesRoutes: Routes = [
-  {path: 'superheroes', component: HeroListComponent}
+  {path: 'superheroes', component: HeroListComponent},
+  {path: 'hero/:id', component: HeroDetailComponent}
 ];
 
 @NgModule({

@@ -14,7 +14,7 @@ import { HeroComponent } from './hero.component';
 })
 export class AdBannerComponent implements AfterViewInit, OnDestroy {
   @Input() ads: AdItem[];
-  currentAddIndex: number = -1;
+  currentAddIndex = -1;
   @ViewChild(AdDirective) adHost: AdDirective;
   subscription: any;
   interval: any;
