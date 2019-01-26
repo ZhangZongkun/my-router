@@ -2,11 +2,15 @@
 
 <nav>
   <a routerLink="/crisis" routerLinkActive="active">Crisis Center</a>
-  <a routerLink="/superheroes" routerLinkActive="active">Heroes</a>
+  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
   <a routerLink="/example" routerLinkActive="active">Example</a>
   <a routerLink="/form" routerLinkActive="active">Form</a>
   <a routerLink="/contact" routerLinkActive="active">Contact</a>
   <a routerLink="/ad" routerLinkActive="active">AD</a>
   <a routerLink="/http/config" routerLinkActive="active">HTTP</a>
 </nav>
-<router-outlet></router-outlet>
+
+<div [@routeAnimation]="getAnimationData(routerOutlet)">
+  <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
+<!--<router-outlet></router-outlet>-->
