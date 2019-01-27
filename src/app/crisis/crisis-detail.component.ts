@@ -1,30 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Crisis, CrisisService } from './crisis.service';
+import { Observable } from 'rxjs/internal/Observable';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   template: `
     <h3>Crisis Detail</h3>
-    <div>Crisis id: {{id}} - {{name}}</div>
+    <div *ngIf="crisis$ | async as crisis">
+    <div>Crisis id: {{crisis.id}} - {{crisis.name}}</div>
+    </div>
     <br>
     <a routerLink="../">Crisis List</a>
   `
 })
 export class CrisisDetailComponent implements OnInit {
-  id: number;
-  name: string;
+  crisis$: Observable<Crisis>;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private crisisService: CrisisService) {
   }
 
   ngOnInit() {
-    this.id = parseInt(this.route.snapshot.paramMap.get('id'), 10);
-    // this.crisisService.getCrisis(this.id)
-    //   .then(crisis => this.name = crisis.name);
-    this.crisisService.getCrisis(this.id)
-      .subscribe(crisis => {
-        this.name = crisis.name
-      });
+    this.crisis$ = this.route.paramMap.pipe(
+      switchMap(params => this.crisisService.getCrisis(params.get('id')))
+    );
   }
 }

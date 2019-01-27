@@ -40,15 +40,17 @@ export class HeroListComponent implements OnInit {
   }
 
   zip() {
-    zip(of(2, 3, 7), of(7, 11, 99).pipe(delay(2000))).subscribe(([x, y]) => {
-      console.log(`${x} - ${y}`);
-    });
+    zip(of(2, 3, 7), of(7, 11, 99)
+      .pipe(delay(2000)))
+      .subscribe(([x, y]) => console.log(`${x} - ${y}`));
   }
 
   switchMap() {
-    of(2, 3, 7, 11).pipe(switchMap(a => {
-      console.log(a);
-      return of(99);
-    })).subscribe(b => console.log(b));
+    of(2, 3, 7, 11)
+      .pipe(switchMap(a => {
+        console.log(a);
+        return of(99);
+      }))
+      .subscribe(b => console.log(b));
   }
 }

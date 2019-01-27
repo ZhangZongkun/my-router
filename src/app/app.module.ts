@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './not-found.component';
-import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
@@ -18,6 +17,4 @@ import { Router } from '@angular/router';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(router: Router) {
-  }
 }
