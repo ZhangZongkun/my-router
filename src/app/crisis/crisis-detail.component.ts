@@ -8,10 +8,12 @@ import { switchMap } from 'rxjs/operators';
   template: `
     <h3>Crisis Detail</h3>
     <div *ngIf="crisis$ | async as crisis">
-    <div>Crisis id: {{crisis.id}} - {{crisis.name}}</div>
+      <div>Crisis id: {{crisis.id}} - {{crisis.name}}</div>
+      <br>
+      <button type="button" class="btn btn-info"
+              (click)="gotoCrises(crisis)">Crisis List
+      </button>
     </div>
-    <br>
-    <a routerLink="../">Crisis List</a>
   `
 })
 export class CrisisDetailComponent implements OnInit {
@@ -26,5 +28,10 @@ export class CrisisDetailComponent implements OnInit {
     this.crisis$ = this.route.paramMap.pipe(
       switchMap(params => this.crisisService.getCrisis(params.get('id')))
     );
+  }
+
+  private gotoCrises(crisis: Crisis) {
+    let crisisId = crisis ? crisis.id : null;
+    this.router.navigate(['../', { id: crisisId }]);
   }
 }
